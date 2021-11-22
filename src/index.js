@@ -1,33 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
-const Todo = (props) => {
-    return React.createElement("div", {}, [
-        React.createElement("p", {}, props.title),
-        React.createElement("p", {}, props.date),
-    ]);
-};
+import Todo from "./components/Todo";
 
 const App = () => {
-    return React.createElement(
-        "div",
-        {},
-        React.createElement("div", {}, [
-            React.createElement("h2", {}, "Your todos"),
-            React.createElement(Todo, {
-                title: "Learn react",
-                date: "01-01-2022",
-            }),
-            React.createElement(Todo, {
-                title: "Learn redux",
-                date: "01-02-2022",
-            }),
-            React.createElement(Todo, {
-                title: "Learn angular",
-                date: "01-03-2025",
-            }),
-        ])
+    return (
+        <div>
+            <div>Your todos</div>
+            <Todo title="Learn React" date="01-01-2022" />
+            <Todo title="Learn Redux" date="01-02-2022" />
+            <Todo title="Learn Angular" date="01-05-2023" />
+        </div>
     );
 };
 
-ReactDOM.render(React.createElement(App), document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
